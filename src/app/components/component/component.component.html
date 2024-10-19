@@ -1,0 +1,6 @@
+<ng-container *ngIf="componentType === 'A'; else other">
+  <app-component-a [data]="data"></app-component-a>
+</ng-container>
+<ng-template #other>
+  <app-component-b [data]="data"></app-component-b>
+</ng-template>
