@@ -1,0 +1,20 @@
+// _inputs.scss
+
+.input {
+  width: 100%;
+  padding: $padding-md;
+  font-size: 16px;
+  border: 1px solid $primary-color;
+  background-color: white;
+  color: $primary-color;
+  @include rounded($border-radius-md);
+  @include transition;
+
+  &:focus {
+    @include focus-outline($glow-color);
+  }
+  
+  &--invalid {
+    border-color: $warning-color;
+  }
+}

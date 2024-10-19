@@ -1,0 +1,22 @@
+// _variables.scss
+
+// Color Palette
+$primary-color: #2d3748;
+$secondary-color: #718096;
+$warning-color: #e53e3e;
+$highlight-color: #4a5568;
+$glow-color: rgba(72, 187, 255, 0.5);  // For glowing effects
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 6px;
+$border-radius-lg: 10px;
+
+// Spacing and Padding
+$padding-sm: 8px;
+$padding-md: 12px;
+$padding-lg: 16px;
+
+// Shadows
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$box-shadow-hover: 0 6px 10px rgba(0, 0, 0, 0.15);
