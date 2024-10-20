@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-page',
+  standalone: true,
   templateUrl: './page.component.html'
 })
 export class PageComponent implements OnInit {
@@ -12,6 +13,6 @@ export class PageComponent implements OnInit {
 
   ngOnInit(): void {
     // Retrieve the 'identifier' from the route
-    this.identifier = this.route.snapshot.paramMap.get('identifier');
+    this.identifier = this.route.snapshot.paramMap.get('identifier'); 
   }
 }
