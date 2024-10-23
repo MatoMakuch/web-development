@@ -1,20 +1,35 @@
 // _inputs.scss
 
-.input {
-  width: 100%;
-  padding: $padding-md;
-  font-size: 16px;
-  border: 1px solid $primary-color;
-  background-color: white;
-  color: $primary-color;
-  @include rounded($border-radius-md);
-  @include transition;
+@import '../variables';
+@import '../mixins';
 
-  &:focus {
-    @include focus-outline($glow-color);
+.input {
+  background-color: $background-color;
+  border-style: solid;
+  @include border-width($border-width-thin);
+  @include border-color($inactive-color);
+
+  // Apply separate rounding to each corner
+  @include rounded-top-left($border-radius-medium);
+  @include rounded-top-right($border-radius-medium);
+  @include rounded-bottom-right($border-radius-medium);
+  @include rounded-bottom-left($border-radius-medium);
+
+  padding: $padding-medium;
+
+  // Hover state (darker border and slight shadow)
+  &:hover {
+    @include border-color($hover-color);
   }
-  
+
+  // Focus state (stronger border and glow)
+  &:focus {
+    @include border-color($active-color);
+    @include border-width($border-width-thick);
+  }
+
+  // Invalid state (error)
   &--invalid {
-    border-color: $warning-color;
+    @include border-color($warning-color);
   }
 }

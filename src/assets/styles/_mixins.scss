@@ -1,18 +1,33 @@
 // _mixins.scss
 
-@mixin rounded($radius: $border-radius-md) {
-  border-radius: $radius;
+// Rounding individual corners
+@mixin rounded-top-left($radius: $border-radius-medium) {
+  border-top-left-radius: $radius;
 }
 
-@mixin box-shadow($shadow: $box-shadow) {
-  box-shadow: $shadow;
+@mixin rounded-top-right($radius: $border-radius-medium) {
+  border-top-right-radius: $radius;
 }
 
-@mixin focus-outline($color: $glow-color) {
-  outline: none;
-  box-shadow: 0 0 5px 3px $color;
+@mixin rounded-bottom-right($radius: $border-radius-medium) {
+  border-bottom-right-radius: $radius;
 }
 
+@mixin rounded-bottom-left($radius: $border-radius-medium) {
+  border-bottom-left-radius: $radius;
+}
+
+// Border width mixin
+@mixin border-width($width: $border-width-thin) {
+  border-width: $width;
+}
+
+// Border color mixin
+@mixin border-color($color: $primary-color) {
+  border-color: $color;
+}
+
+// Transition mixin
 @mixin transition($property: all, $duration: 0.3s, $ease: ease-in-out) {
   transition: $property $duration $ease;
 }
