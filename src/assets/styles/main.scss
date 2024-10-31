@@ -4,6 +4,9 @@
 @import 'base';
 @import 'components/buttons.scss';
 @import 'components/inputs.scss';
+@import 'components/labels';
+@import 'components/validation';
+@import 'components/input-group';
 
 * {
     font-family: 'CustomFont', sans-serif;

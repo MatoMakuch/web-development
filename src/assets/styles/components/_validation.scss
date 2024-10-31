@@ -1,0 +1,16 @@
+@import '../variables';
+@import '../mixins';
+
+.validation {
+  font-size: $font-size-small;
+  color: $warning-color;
+  margin-top: $margin-small;
+
+  &--valid {
+    color: $primary-color;
+  }
+
+  &--invalid {
+    color: $warning-color;
+  }
+}
