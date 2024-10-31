@@ -1,0 +1,9 @@
+@import '../variables';
+@import '../mixins';
+
+.label {
+  font-size: $font-size-medium;
+  color: $primary-color;
+  display: block;
+  margin-bottom: $margin-small;
+}
