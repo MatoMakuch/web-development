@@ -1,0 +1,47 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $padding-medium;
+  padding-right: $padding-medium;
+  
+  // Breakpoints for responsive layouts
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+  }
+}
+
+// A fluid container for full-width layouts
+.container-fluid {
+  width: 100%;
+  padding-left: $padding-small;
+  padding-right: $padding-small;
+}
+
+// Optional variations for smaller, more contained layouts
+.container-small {
+  max-width: 600px;
+}
+
+.container-medium {
+  max-width: 800px;
+}

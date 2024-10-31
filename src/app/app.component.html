@@ -1,8 +1,24 @@
-<div class="input-group" style="width: 200px;">
-  <label class="label" for="username">Username</label>
-  <input class="input" id="username" aria-describedby="username-help" />
-  <small id="username-help" class="validation validation--invalid">Name taken</small>
-</div>
+<div class="container-vertical">
 
+  <label for="name-input" class="label">Name</label>
+
+  <div class="input-group">
+
+    <div class="input-group-start" style="display: flex; align-items: center; justify-content: center; padding-left: 0.5rem; padding-right: 0.5rem;">
+
+      <i class="icon pi pi-user"></i>
+
+    </div>
+
+    <input type="text" class="input input-group-middle" id="name-input" aria-describedby="name-input-icon name-input-validation">
+
+    <input type="text" class="input input-group-middle" id="name-input" aria-describedby="name-input-icon name-input-validation">
+
+    <input type="button" class="input-group-end button" value="Submit" id="name-submit-button">
+
+  </div>
+
+  <label for="name-input" class="label">Enter your name</label>
+</div>
 
 <router-outlet></router-outlet>

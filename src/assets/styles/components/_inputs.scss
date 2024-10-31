@@ -1,34 +1,35 @@
-// _inputs.scss
-
-@import '../variables';
-@import '../mixins';
+@import '../base/variables';
+@import '../base/mixins';
 
 .input {
   background-color: $background-color;
+
   border-style: solid;
-  @include border-width($border-width-thin);
   @include border-color($inactive-color);
+  @include border-width($border-width-thin);
 
-  // Apply separate rounding to each corner
-  @include rounded-top-left($border-radius-medium);
-  @include rounded-top-right($border-radius-medium);
-  @include rounded-bottom-right($border-radius-medium);
-  @include rounded-bottom-left($border-radius-medium);
+  // @include rounded-top-left($border-radius-medium);
+  // @include rounded-top-right($border-radius-medium);
+  // @include rounded-bottom-right($border-radius-medium);
+  // @include rounded-bottom-left($border-radius-medium);
 
+  box-sizing: border-box;
   padding: $padding-medium;
 
-  // Hover state (darker border and slight shadow)
+  &::placeholder {
+    color: $inactive-color;
+  }
+
   &:hover {
     @include border-color($hover-color);
   }
 
-  // Focus state (stronger border and glow)
   &:focus {
     @include border-color($active-color);
     @include border-width($border-width-thick);
+    outline: none;
   }
 
-  // Invalid state (error)
   &--invalid {
     @include border-color($warning-color);
   }

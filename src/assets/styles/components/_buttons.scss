@@ -1,0 +1,32 @@
+// _buttons.scss
+
+@import '../base/variables';
+@import '../base/mixins';
+
+.button {
+  background-color: #000000; // Dark background color to match the image
+
+  border-style: solid;
+  @include border-color($primary-color);
+  @include border-width($border-width-thin);
+
+  // Text
+  color: white;
+  font-size: $font-size-small;
+  text-align: center;
+
+  // Layout
+
+  cursor: pointer;
+
+  // Hover and focus effects
+  &:hover,
+  &:focus {
+    background-color: #001233; // Slightly lighter shade on hover
+  }
+
+  // Active state for click effect
+  &:active {
+    background-color: #0a192f; // Even lighter shade for click feedback
+  }
+}

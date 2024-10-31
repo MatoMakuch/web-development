@@ -1,6 +1,4 @@
-// _mixins.scss
-
-// Rounding individual corners
+// Border Radius Mixins
 @mixin rounded-top-left($radius: $border-radius-medium) {
   border-top-left-radius: $radius;
 }
@@ -17,17 +15,16 @@
   border-bottom-left-radius: $radius;
 }
 
-// Border width mixin
+// Border and Color
 @mixin border-width($width: $border-width-thin) {
   border-width: $width;
 }
 
-// Border color mixin
 @mixin border-color($color: $primary-color) {
   border-color: $color;
 }
 
-// Transition mixin
+// Transition
 @mixin transition($property: all, $duration: 0.3s, $ease: ease-in-out) {
   transition: $property $duration $ease;
 }

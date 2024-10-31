@@ -1,9 +1,7 @@
-@import '../variables';
-@import '../mixins';
+@import '../base/variables';
 
 .validation {
   font-size: $font-size-small;
-  color: $warning-color;
   margin-top: $margin-small;
 
   &--valid {
@@ -14,3 +12,4 @@
     color: $warning-color;
   }
 }
+

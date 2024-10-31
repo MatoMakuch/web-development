@@ -1,15 +1,11 @@
-// _variables.scss
-
-// Color Palette
-$primary-color: #2d3748;
+// Colors
+$primary-color: #000000;
 $secondary-color: #718096;
 $warning-color: #e53e3e;
-
 $inactive-color: #b8b8b8;
 $hover-color: #7a7a7a;
 $active-color: #333333;
-
-$background-color: #f7fafc;
+$background-color: #ffffff;
 
 // Border Radius
 $border-radius-small: 4px;
@@ -20,12 +16,10 @@ $border-radius-large: 10px;
 $border-width-thin: 1px;
 $border-width-thick: 1.2px;
 
-// Spacing and Padding
+// Spacing (Padding and Margin)
 $padding-small: 4px;
 $padding-medium: 8px;
 $padding-large: 16px;
-
-// Margins
 $margin-small: 4px;
 $margin-medium: 12px;
 $margin-large: 16px;
@@ -35,7 +29,5 @@ $font-size-small: 12px;
 $font-size-medium: 14px;
 $font-size-large: 16px;
 
-// Shadows
-$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-$box-shadow-hover: 0 6px 10px rgba(0, 0, 0, 0.15);
-$box-shadow-focus: 0 0 8px rgba(66, 153, 225, 0.5);
+// Form
+$input-height: 40px;
