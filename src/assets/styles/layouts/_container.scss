@@ -3,8 +3,9 @@
 
 .container {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+
+  display: flex;
+
   padding-left: $padding-medium;
   padding-right: $padding-medium;
   
@@ -28,20 +29,8 @@
   @media (min-width: 1400px) {
     max-width: 1320px;
   }
-}
 
-// A fluid container for full-width layouts
-.container-fluid {
-  width: 100%;
-  padding-left: $padding-small;
-  padding-right: $padding-small;
-}
-
-// Optional variations for smaller, more contained layouts
-.container-small {
-  max-width: 600px;
-}
-
-.container-medium {
-  max-width: 800px;
+  &.container-vertical {
+    flex-direction: column;
+  }
 }

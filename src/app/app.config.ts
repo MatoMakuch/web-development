@@ -4,7 +4,6 @@ import { provideRouter } from '@angular/router';
 import { MockDataService } from './mock-component-data-source.service.js'; // Mock service
 import { DataSourceToken } from './component-data-source.token.js';
 
-
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {

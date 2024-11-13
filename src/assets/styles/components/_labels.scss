@@ -4,7 +4,17 @@
   display: border-box;
 
   font-size: $font-size-small;
-  color: $primary-color;
 
+  color: $text-color !important;
+
+  margin-top: $margin-small;
   margin-bottom: $margin-small;
+
+  &.label-small {
+    font-size: $font-size-small;
+  }
+
+  &.label-medium {
+    font-size: $font-size-medium;
+  }
 }
