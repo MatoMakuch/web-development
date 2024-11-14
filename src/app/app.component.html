@@ -25,6 +25,12 @@
     placeholder="Select a City">
   </cyberfab-dropdown>
 
+  <cyberfab-list [items]="products">
+    <ng-template let-item>
+      {{ item.name }}
+    </ng-template>
+  </cyberfab-list>
+
 <router-outlet></router-outlet>
 
 <script type="module" src="../assets/scripts/dropdown.js"></script>

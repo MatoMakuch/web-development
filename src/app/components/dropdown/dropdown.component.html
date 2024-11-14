@@ -2,7 +2,9 @@
 <div class="dropdown">
   <div class="dropdown-button" (click)="toggleDropdown()">
     {{ selectedOption || placeholder }}
-    <span class="dropdown-icon">&#9662;</span>
+    <span class="dropdown-icon">
+      <i class="icon pi pi-chevron-down"></i>
+    </span>
   </div>
   
   <div class="dropdown-menu" *ngIf="isOpen">
