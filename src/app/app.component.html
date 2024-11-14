@@ -1,8 +1,30 @@
-<div class="input-group" style="width: 200px;">
-  <label class="label" for="username">Username</label>
-  <input class="input" id="username" aria-describedby="username-help" />
-  <small id="username-help" class="validation validation--invalid">Name taken</small>
-</div>
+<div class="container container-vertical">
 
+  <label for="name-input" class="label label-medium">Name</label>
+
+  <div class="input-group">
+
+    <div class="input-group-start" style="display: flex; align-items: center; justify-content: center; padding-left: 0.5rem; padding-right: 0.5rem;">
+
+      <i class="icon pi pi-user" style="font-size: 0.75rem;"></i>
+
+    </div>
+
+    <input type="text" class="input input-group-middle" id="name-input" aria-describedby="name-input-icon name-input-validation">
+
+    <input type="text" class="input input-group-middle" id="name-input" aria-describedby="name-input-icon name-input-validation">
+
+    <input type="button" class="input-group-end button" value="Submit" id="name-submit-button">
+
+  </div>
+
+  <label for="name-input" class="label label-small">Enter your name</label>
+
+  <cyberfab-dropdown 
+    [options]="['Option 1', 'Option 2', 'Option 3']" 
+    placeholder="Select a City">
+  </cyberfab-dropdown>
 
 <router-outlet></router-outlet>
+
+<script type="module" src="../assets/scripts/dropdown.js"></script>
