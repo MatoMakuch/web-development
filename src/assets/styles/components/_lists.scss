@@ -1,16 +1,18 @@
-.cyberfab-list {
-  max-height: 200px;
-  overflow-y: auto;
-  border: 1px solid $inactive-color;
-  border-radius: $border-radius-medium;
+@import '../base/variables';
+@import '../base/mixins';
+
+.list {
+  display: flex;
+  flex-direction: column;
   padding: 0;
-  margin: 0;
-  list-style: none;
+  list-style-type: none;
 
   .list-item {
-    padding: $padding-small;
+    padding: $padding-medium;
     color: $text-color;
+    border-radius: $border-radius-medium;
     cursor: pointer;
+    transition: background-color 0.2s;
 
     &:hover {
       background-color: $hover-color;

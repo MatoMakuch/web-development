@@ -1,8 +1,8 @@
-<div class="cyberfab-list">
-  <ul>
+
+  <ul class="list">
     <li *ngFor="let item of items" class="list-item">
       <ng-container *ngIf="itemTemplate; else defaultTemplate" [ngTemplateOutlet]="itemTemplate" [ngTemplateOutletContext]="{ $implicit: item }"></ng-container>
       <ng-template #defaultTemplate>{{ item }}</ng-template>
     </li>
   </ul>
-</div>
+
