@@ -1,5 +1,5 @@
 // dropdown.component.ts
-import { Component, Input } from '@angular/core';
+import { Component, ContentChild, Input, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,16 +10,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent {
-  
-  isOpen = false;
-  selectedOption: string | null = null;
-
-  toggleDropdown() {
-    this.isOpen = !this.isOpen;
-  }
-
-  selectOption(option: string) {
-    this.selectedOption = option;
-    this.isOpen = false;
-  }
+  @Input() items: any[] = [];
+  @ContentChild(TemplateRef) itemTemplate!: TemplateRef<any>;
 }
