@@ -13,6 +13,7 @@
     font-size: $font-size-medium;
     text-align: left;
     border: $border-width-thin solid $inactive-color;
+    border-radius: $border-radius-medium;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -31,10 +32,7 @@
 
   &-icon {
     font-size: $font-size-small;
-  }
-
-  &.open .dropdown-icon {
-    transform: rotate(180deg);
+    transition: transform 0.3s ease;
   }
 
   &-menu {
@@ -46,27 +44,23 @@
     overflow-y: auto;
     background-color: $background-color;
     border: $border-width-thin solid $inactive-color;
+    border-radius: $border-radius-medium;
     z-index: 1000;
-    display: none;
 
-    &.show {
-      display: block;
-    }
-  }
+    .dropdown-option {
+      padding: $padding-medium;
+      color: $text-color;
+      cursor: pointer;
 
-  &-option {
-    padding: $padding-medium;
-    color: $text-color;
-    cursor: pointer;
+      &:hover {
+        background-color: $hover-color;
+        color: white;
+      }
 
-    &:hover {
-      background-color: $hover-color;
-      color: white;
-    }
-
-    &.selected {
-      background-color: $active-color;
-      color: white;
+      &.selected {
+        background-color: $active-color;
+        color: white;
+      }
     }
   }
 }
