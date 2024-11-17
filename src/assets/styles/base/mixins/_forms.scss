@@ -1,0 +1,44 @@
+@import '../variables';
+
+@mixin form-border() {
+  border-style: solid;
+
+  @include border-color($inactive-color);
+
+  @include border-width($border-width-thin);
+  
+  @include rounded-top-left($border-radius-medium);
+  @include rounded-bottom-left($border-radius-medium);
+  @include rounded-top-right($border-radius-medium);
+  @include rounded-bottom-right($border-radius-medium);
+}
+
+@mixin form() {
+  position: relative;
+
+  box-sizing: border-box;
+
+  width: 50vw;
+  @include unit-height(1, $padding-medium);
+
+  @include padding($padding-medium);
+
+  @include form-border();
+
+  font-size: $font-size-large;
+  line-height: 1rem;
+
+  &:hover {
+    @include border-color($hover-color);
+  }
+
+  &:focus {
+    @include border-color($active-color);
+    @include border-width($border-width-thick);
+    outline: none;
+  }
+
+  &--invalid {
+    @include border-color($warning-color);
+  }
+}

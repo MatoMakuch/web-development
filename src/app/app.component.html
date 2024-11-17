@@ -1,6 +1,19 @@
 <div class="container container-vertical">
 
-  <label for="name-input" class="label label-medium">Name</label>
+  <label class="label label-medium">Name</label>
+
+  <input type="text" class="input">
+
+  <label class="label label-small">Enter your name</label>
+
+  <label class="label label-medium">City</label>
+
+  <cyberfab-dropdown 
+    [options]="['Bratislava', 'Munich', 'Vienna']" 
+    placeholder="Select a City">
+  </cyberfab-dropdown>
+
+  <label class="label label-small">Enter your city</label>
 
   <div class="input-group">
 
@@ -17,13 +30,6 @@
     <input type="button" class="input-group-end button" value="Submit" id="name-submit-button">
 
   </div>
-
-  <label for="name-input" class="label label-small">Enter your name</label>
-
-  <cyberfab-dropdown 
-    [options]="['Option 1', 'Option 2', 'Option 3']" 
-    placeholder="Select a City">
-  </cyberfab-dropdown>
 
   <cyberfab-list [items]="products">
     <ng-template let-item>

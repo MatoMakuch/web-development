@@ -1,3 +1,7 @@
+@mixin padding($padding) {
+  padding: $padding + rem;
+}
+
 // Border Radius Mixins
 @mixin rounded-top-left($radius: $border-radius-medium, $important: false) {
   @if $important {
@@ -31,6 +35,14 @@
   }
 }
 
+@mixin rounded($radius: $border-radius-medium, $important: false) {
+  @if $important {
+    border-radius: #{$radius} !important;
+  } @else {
+    border-radius: #{$radius};
+  }
+}
+
 // Border and Color Mixins
 @mixin border-width($width: $border-width-thin, $important: false) {
   @if $important {
@@ -46,4 +58,8 @@
   } @else {
     border-color: #{$color};
   }
+}
+
+@mixin unit-height($units: 1, $padding) {
+  height: (1.0 * $units + 2 * $padding) + rem;
 }

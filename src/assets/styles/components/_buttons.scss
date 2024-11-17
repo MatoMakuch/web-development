@@ -1,14 +1,20 @@
 // _buttons.scss
 
 @import '../base/variables';
-@import '../base/mixins';
+@import '../base/mixins/common';
 
 .button {
+  box-sizing: border-box;
+  @include unit-height(1, $padding-medium);
+
   background-color: #000000; // Dark background color to match the image
 
   border-style: solid;
   @include border-color($primary-color, true);
   @include border-width($border-width-thin);
+  @include rounded($border-radius-medium);
+  
+  padding: $padding-medium;
 
   // Text
   color: white;

@@ -1,21 +1,14 @@
 @import '../base/variables';
-@import '../base/mixins';
+@import '../base/mixins/common';
 
 .input-group {
   display: flex;
   align-items: center;
-  width: 200px;
+  
 
   &-start,
   &-middle,
   &-end {
-    border-style: solid;
-    @include border-color($inactive-color);
-    @include border-width($border-width-thin);
-
-    box-sizing: border-box;
-    height: 1.8rem;
-
     z-index: 1;
 
     &:hover {
@@ -30,20 +23,25 @@
   &-start {
     flex: 1;
 
-    @include rounded-top-left($border-radius-medium);
-    @include rounded-bottom-left($border-radius-medium);
+    @include rounded-top-right('0px', true);
+    @include rounded-bottom-right('0px', true);
   }
 
   &-middle {
     flex-grow: 1;
     margin-left: -1px;
+
+    @include rounded-top-right('0px', true);
+    @include rounded-bottom-right('0px', true);
+    @include rounded-top-left('0px', true);
+    @include rounded-bottom-left('0px', true);
   }
 
   &-end {
     flex: 1;
     margin-left: -1px;
     
-    @include rounded-top-right($border-radius-medium);
-    @include rounded-bottom-right($border-radius-medium);
+    @include rounded-top-left('0px', true);
+    @include rounded-bottom-left('0px', true);
   }
 }

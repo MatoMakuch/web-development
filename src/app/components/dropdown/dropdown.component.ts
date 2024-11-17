@@ -11,8 +11,8 @@ import { ListComponent } from '../list/list.component';
   styleUrls: ['./dropdown.component.scss']
 })
 export class DropdownComponent {
-  @Input() options: string[] = ["test", "Test2"]; // Dynamic list of options from parent
-  @Input() placeholder: string = 'Select an option'; // Placeholder text
+  @Input() options: string[] = [];
+  @Input() placeholder: string = 'Select an option';
   
   isOpen = false;
   selectedOption: string | null = null;

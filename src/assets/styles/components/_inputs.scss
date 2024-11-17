@@ -1,31 +1,9 @@
 @import '../base/variables';
-@import '../base/mixins';
+@import '../base/mixins/common';
+@import '../base/mixins/forms';
 
 .input {
   background-color: $background-color;
 
-  border-style: solid;
-  @include border-color($inactive-color);
-  @include border-width($border-width-thin);
-
-  box-sizing: border-box;
-  padding: $padding-medium;
-
-  &::placeholder {
-    color: $inactive-color;
-  }
-
-  &:hover {
-    @include border-color($hover-color);
-  }
-
-  &:focus {
-    @include border-color($active-color);
-    @include border-width($border-width-thick);
-    outline: none;
-  }
-
-  &--invalid {
-    @include border-color($warning-color);
-  }
+  @include form();
 }

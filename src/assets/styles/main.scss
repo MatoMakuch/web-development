@@ -1,6 +1,7 @@
 // main.scss
 @import 'base/variables';
-@import 'base/mixins';
+@import 'base/mixins/common';
+@import 'base/mixins/forms';
 @import 'base/typography';
 @import 'components/buttons';
 @import 'components/dropdowns';
@@ -19,7 +20,7 @@
 * {
     font-family: 'CustomFont', sans-serif;
     -webkit-font-smoothing: antialiased;
-    line-height: 1.5; 
+    line-height: 1.5rem;
     vertical-align: baseline; 
 }
   
