@@ -5,17 +5,18 @@
   display: flex;
   flex-direction: column;
   padding: 0;
+  margin: 0;
   list-style-type: none;
 
   .list-item {
-    padding: $padding-medium;
+    padding: $padding-small;
     color: $text-color;
     border-radius: $border-radius-medium;
     cursor: pointer;
     transition: background-color 0.2s;
 
     &:hover {
-      background-color: $hover-color;
+      background-color: $listhover-color;
       color: white;
     }
 
