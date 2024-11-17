@@ -1,7 +1,9 @@
 <div class="dropdown">
   <div class="dropdown-button" (click)="toggleDropdown()">
     {{ selectedOption || placeholder }}
-    <span class="dropdown-icon" [class.open]="isOpen">&#9662;</span> <!-- ▼ Icon -->
+    <span class="dropdown-icon" [class.open]="isOpen">
+      <i class="pi pi-chevron-down"></i>
+    </span>
   </div>
 
   <div class="dropdown-menu" *ngIf="isOpen">

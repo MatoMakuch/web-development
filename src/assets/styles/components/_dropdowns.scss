@@ -1,66 +1,73 @@
 @import '../base/variables';
 @import '../base/mixins';
 
+// Dropdown container and button styling
 .dropdown {
+  background-color: $background-color;
+  border-style: solid;
+  @include border-color($inactive-color);
+  @include border-width($border-width-thin);
+  box-sizing: border-box;
+  padding: $padding-medium;
   position: relative;
-  width: 200px;
+  width: 100%;
+  max-width: 200px; // Adjust width as needed
 
   &-button {
-    width: 100%;
-    padding: $padding-medium;
-    background-color: $background-color;
-    color: $inactive-color;
-    font-size: $font-size-medium;
-    text-align: left;
-    border: $border-width-thin solid $inactive-color;
-    border-radius: $border-radius-medium;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    &:hover {
-      color: $hover-color;
-      border-color: $hover-color;
-    }
-
-    &:focus {
-      outline: none;
-      border-color: $active-color;
-    }
-  }
-
-  &-icon {
-    font-size: $font-size-small;
-    transition: transform 0.3s ease;
+    
   }
 
   &-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    max-height: 200px;
-    overflow-y: auto;
-    background-color: $background-color;
-    border: $border-width-thin solid $inactive-color;
-    border-radius: $border-radius-medium;
-    z-index: 1000;
+    
+  }
 
-    .dropdown-option {
-      padding: $padding-medium;
-      color: $text-color;
-      cursor: pointer;
+  &.open .dropdown-menu {
+    display: block;
+  }
+}
 
-      &:hover {
-        background-color: $hover-color;
-        color: white;
-      }
+// Icon inside the dropdown
+.dropdown-icon {
+  font-size: $font-size-small;
+  padding: $padding-small;
+  border-radius: 50%; // Circle effect for icon
 
-      &.selected {
-        background-color: $active-color;
-        color: white;
-      }
+  &:hover {
+    background-color: $inactive-color;
+  }
+
+  &:active {
+    background-color: $hover-color;
+  }
+}
+
+// Dropdown menu itself
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + $padding-small);
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: $background-color;
+  border: $border-width-thin solid $inactive-color;
+  @include rounded-bottom-left($border-radius-medium);
+  @include rounded-bottom-right($border-radius-medium);
+  z-index: 1000;
+
+  .dropdown-option {
+    padding: $padding-medium;
+    color: $text-color;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $hover-color;
+      color: white;
+    }
+
+    &.selected {
+      background-color: $active-color;
+      color: white;
     }
   }
 }

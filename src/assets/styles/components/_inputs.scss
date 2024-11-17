@@ -8,11 +8,6 @@
   @include border-color($inactive-color);
   @include border-width($border-width-thin);
 
-  // @include rounded-top-left($border-radius-medium);
-  // @include rounded-top-right($border-radius-medium);
-  // @include rounded-bottom-right($border-radius-medium);
-  // @include rounded-bottom-left($border-radius-medium);
-
   box-sizing: border-box;
   padding: $padding-medium;
 
