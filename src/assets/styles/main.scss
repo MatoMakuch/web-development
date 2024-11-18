@@ -12,6 +12,7 @@
 @import 'components/validation';
 @import 'components/popups';
 @import 'components/lists';
+@import 'components/checkboxes';
 @import 'layouts/container';
 @import 'layouts/grid';
 @import 'utilities/helpers';
@@ -19,7 +20,7 @@
 
 
 * {
-    font-family: 'CustomFont', sans-serif;
+    font-family: 'Slate Pro', sans-serif;
     -webkit-font-smoothing: antialiased;
     line-height: 1.5rem;
     vertical-align: baseline; 

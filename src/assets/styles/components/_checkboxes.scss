@@ -1,0 +1,27 @@
+@import '../base/variables';
+@import '../base/mixins/common';
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+
+  input[type='checkbox'] {
+    width: calc(#{unit-size-rem(0.5)}rem + #{2 * $padding-medium}rem);
+    height: calc(#{unit-size-rem(0.5)}rem + #{2 * $padding-medium}rem);
+    background-color: $background-color;
+
+    @include rounded($border-radius-medium); 
+    @include border-width($border-width-thin);
+    @include border-color();
+
+    transition: background-color 0.2s, border-color 0.2s;
+
+    &:checked {
+      background-color: $active-color; 
+    }
+
+    &:hover {
+      border-color: $hover-color;
+    }
+  }
+}

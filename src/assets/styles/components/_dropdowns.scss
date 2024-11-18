@@ -12,6 +12,11 @@
   flex-direction: row;
   justify-content: space-between;
 
+  font-size: $font-size-large;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+
   &.open .dropdown-menu {
     display: block;
   }
