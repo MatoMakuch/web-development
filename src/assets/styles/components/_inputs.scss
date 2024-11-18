@@ -1,9 +1,9 @@
 @import '../base/variables';
 @import '../base/mixins/common';
-@import '../base/mixins/forms';
+@import '../base/mixins/inputs';
 
 .input {
   background-color: $background-color;
 
-  @include form();
+  @include input();
 }

@@ -4,25 +4,35 @@
 .list {
   display: flex;
   flex-direction: column;
-  padding: 0;
+
+  padding: #{$padding-small}rem;
   margin: 0;
+
+  @include rounded($border-radius-medium);
+  
   list-style-type: none;
+}
 
-  .list-item {
-    padding: $padding-small;
+.list-item {
+  box-sizing: border-box;
+  height: calc(#{unit-size-rem(1)}rem + #{2 * $padding-medium}rem);
+  padding: #{$padding-medium}rem;
+  
+  @include rounded($border-radius-medium);
+
+  font-size: $font-size-large;
+  line-height: 1rem;
+  color: $text-color;
+  
+  cursor: pointer;
+
+  &:hover {
+    background-color: $list-hover-color;
     color: $text-color;
-    border-radius: $border-radius-medium;
-    cursor: pointer;
-    transition: background-color 0.2s;
+  }
 
-    &:hover {
-      background-color: $listhover-color;
-      color: $text-color;
-    }
-
-    &.selected {
-      background-color: $active-color;
-      color: $text-color;
-    }
+  &.selected {
+    background-color: $active-color;
+    color: $text-color;
   }
 }

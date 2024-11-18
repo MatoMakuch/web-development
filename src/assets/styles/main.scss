@@ -1,7 +1,8 @@
 // main.scss
 @import 'base/variables';
 @import 'base/mixins/common';
-@import 'base/mixins/forms';
+@import 'base/mixins/inputs';
+@import 'base/functions';
 @import 'base/typography';
 @import 'components/buttons';
 @import 'components/dropdowns';

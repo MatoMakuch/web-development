@@ -1,45 +1,43 @@
-@mixin padding($padding) {
-  padding: $padding + rem;
-}
+@import '../functions';
 
 // Border Radius Mixins
 @mixin rounded-top-left($radius: $border-radius-medium, $important: false) {
   @if $important {
-    border-top-left-radius: #{$radius} !important;
+    border-top-left-radius: #{$radius}rem !important;
   } @else {
-    border-top-left-radius: #{$radius};
+    border-top-left-radius: #{$radius}rem;
   }
 }
 
 @mixin rounded-top-right($radius: $border-radius-medium, $important: false) {
   @if $important {
-    border-top-right-radius: #{$radius} !important;
+    border-top-right-radius: #{$radius}rem !important;
   } @else {
-    border-top-right-radius: #{$radius};
+    border-top-right-radius: #{$radius}rem;
   }
 }
 
 @mixin rounded-bottom-right($radius: $border-radius-medium, $important: false) {
   @if $important {
-    border-bottom-right-radius: #{$radius} !important;
+    border-bottom-right-radius: #{$radius}rem !important;
   } @else {
-    border-bottom-right-radius: #{$radius};
+    border-bottom-right-radius: #{$radius}rem;
   }
 }
 
 @mixin rounded-bottom-left($radius: $border-radius-medium, $important: false) {
   @if $important {
-    border-bottom-left-radius: #{$radius} !important;
+    border-bottom-left-radius: #{$radius}rem !important;
   } @else {
-    border-bottom-left-radius: #{$radius};
+    border-bottom-left-radius: #{$radius}rem;
   }
 }
 
 @mixin rounded($radius: $border-radius-medium, $important: false) {
   @if $important {
-    border-radius: #{$radius} !important;
+    border-radius: #{$radius}rem !important;
   } @else {
-    border-radius: #{$radius};
+    border-radius: #{$radius}rem;
   }
 }
 
@@ -58,8 +56,4 @@
   } @else {
     border-color: #{$color};
   }
-}
-
-@mixin unit-height($units: 1, $padding) {
-  height: (1.0 * $units + 2 * $padding) + rem;
 }

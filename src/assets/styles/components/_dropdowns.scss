@@ -1,20 +1,16 @@
 @import '../base/variables';
 @import '../base/mixins/common';
-@import '../base/mixins/forms';
+@import '../base/mixins/inputs';
 
 // Dropdown container and button styling
 .dropdown {
   background-color: $background-color;
 
-  @include form();
+  @include input();
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-  &-menu {
-    
-  }
 
   &.open .dropdown-menu {
     display: block;
@@ -30,30 +26,19 @@
 // Dropdown menu itself
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + ($padding-small + rem));
   left: 0;
-  width: 100%;
-  max-height: 200px;
-  overflow-y: auto;
+  top: calc(#{unit-size-rem(1)}rem + #{2 * $padding-medium}rem + #{$padding-small}rem);
+
+  box-sizing: border-box;
+  width: calc(#{unit-size-vw(3)}vw + 2 * #{$padding-medium}rem);
+  max-height: calc(#{unit-size-rm(6)}vw + 2 * #{$padding-medium}rem);
+
   background-color: $background-color;
+
   border: $border-width-thin solid $inactive-color;
-  @include rounded-bottom-left($border-radius-medium);
-  @include rounded-bottom-right($border-radius-medium);
+  @include rounded($border-radius-medium);
+
+  overflow-y: auto;
+
   z-index: 1000;
-
-  .dropdown-option {
-    padding: $padding-medium;
-    color: $text-color;
-    cursor: pointer;
-
-    &:hover {
-      background-color: $hover-color;
-      color: white;
-    }
-
-    &.selected {
-      background-color: $active-color;
-      color: white;
-    }
-  }
 }
