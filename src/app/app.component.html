@@ -9,7 +9,8 @@
   <label class="label label-medium">City</label>
 
   <cyberfab-dropdown 
-    [options]="['Bratislava', 'Munich', 'Vienna']" 
+    [isMultiSelect]="false"
+    [options]="['Bratislava', 'Munich', 'Vienna']"
     placeholder="Select a City">
   </cyberfab-dropdown>
 
@@ -39,10 +40,7 @@
 
   <input type="button" class="button" value="OK" id="name-submit-button">
 
-  <input type="checkbox" class="checkbox" />
-
-  <cyberfab-checkbox [checked]="isChecked" ></cyberfab-checkbox>
-
+  <cyberfab-checkbox></cyberfab-checkbox>
 
 <router-outlet></router-outlet>
 

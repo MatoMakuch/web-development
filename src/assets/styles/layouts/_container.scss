@@ -30,6 +30,10 @@
     max-width: 1320px;
   }
 
+  &.container-horizontal {
+    flex-direction: row;
+  }
+
   &.container-vertical {
     flex-direction: column;
   }

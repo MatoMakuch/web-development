@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { ListComponent } from './components/list/list.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
+import { CyberfabUploadDirective } from './components/upload/upload.directive';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { CheckboxComponent } from './components/checkbox/checkbox.component';
     RouterOutlet,
     DropdownComponent,
     ListComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    CyberfabUploadDirective
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
