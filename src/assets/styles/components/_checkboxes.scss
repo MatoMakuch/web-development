@@ -1,27 +1,60 @@
 @import '../base/variables';
 @import '../base/mixins/common';
 
-.checkbox {
+.custom-checkbox {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
 
-  input[type='checkbox'] {
-    width: calc(#{unit-size-rem(0.5)}rem + #{2 * $padding-medium}rem);
-    height: calc(#{unit-size-rem(0.5)}rem + #{2 * $padding-medium}rem);
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  .native-checkbox {
+    position: absolute;
+    opacity: 0; // Hide the native checkbox
+    pointer-events: none; // Prevent interference
+  }
+
+  .custom-checkbox-box {
+    width: calc(#{unit-size-rem(0.6)}rem + 2 * #{$padding-medium}rem);
+    height: calc(#{unit-size-rem(0.6)}rem + 2 * #{$padding-medium}rem);
     background-color: $background-color;
-
-    @include rounded($border-radius-medium); 
-    @include border-width($border-width-thin);
-    @include border-color();
-
+    border: $border-width-thin solid $inactive-color;
+    box-sizing: border-box;
+    @include rounded($border-radius-medium);
     transition: background-color 0.2s, border-color 0.2s;
 
-    &:checked {
-      background-color: $active-color; 
-    }
-
-    &:hover {
-      border-color: $hover-color;
+    &::after {
+      content: '\2713';
+      position: absolute;
+      justify-content: center;
+      color: $background-color; // Set the color for the checkmark
+      //width: calc(#{unit-size-rem(0.6)}rem + 2 * #{$padding-medium}rem);
+      //height: calc(#{unit-size-rem(0.6)}rem + 2 * #{$padding-medium}rem);
+      border: solid $background-color;
+      border-width: 0 0.2rem 0.2rem 0;
+      opacity: 0; // Hide checkmark initially
+      transition: opacity 0.2s;
     }
   }
+
+  &.checked .custom-checkbox-box {
+    background-color: $active-color;
+    border-color: $active-color;
+
+    &::after {
+      opacity: 1; // Show checkmark when checked
+    }
+  }
+
+  .custom-checkbox-label {
+    margin-left: $padding-small;
+    font-size: $font-size-medium;
+    color: $text-color;
+  }
 }
+

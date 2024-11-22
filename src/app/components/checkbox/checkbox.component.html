@@ -1,0 +1,17 @@
+<div 
+  class="custom-checkbox" 
+  [class.checked]="checked" 
+  [class.disabled]="disabled" 
+  (click)="toggleCheckbox()"
+>
+  <input
+    type="checkbox"
+    [checked]="checked"
+    [disabled]="disabled"
+    [id]="id"
+    (change)="toggleCheckbox()"
+    class="native-checkbox"
+  />
+  <span class="custom-checkbox-box"></span>
+  <label *NgIf="label" [for]="id" class="custom-checkbox-label">{{ label }}</label>
+</div>

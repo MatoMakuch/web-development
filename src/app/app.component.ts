@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { ListComponent } from './components/list/list.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,8 @@ import { ListComponent } from './components/list/list.component';
   imports: [
     RouterOutlet,
     DropdownComponent,
-    ListComponent
+    ListComponent,
+    CheckboxComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -24,4 +26,5 @@ export class AppComponent {
     { id: 5, name: 'Bracelet' },
     { id: 6, name: 'Brown Purse' },
   ];
+  isChecked: boolean = false;
 }
