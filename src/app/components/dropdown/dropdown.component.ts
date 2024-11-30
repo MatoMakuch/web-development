@@ -24,20 +24,6 @@ export class DropdownComponent {
     this.isOpen = !this.isOpen;
   }
 
-  toggleOption(option: string, checked: boolean) {
-    if (checked) {
-      if (!this.selectedOptions.includes(option)) {
-        this.selectedOptions.push(option);
-      }
-    } else {
-      const index = this.selectedOptions.indexOf(option);
-      if (index !== -1) {
-        this.selectedOptions.splice(index, 1);
-      }
-    }
-    this.selectedOptionsChange.emit(this.selectedOptions);
-  }
-
   selectOption(option: string) {
     if (!this.isMultiSelect) {
       this.selectedOption = option;

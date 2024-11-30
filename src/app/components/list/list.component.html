@@ -1,8 +1,16 @@
-
-  <ul class="list">
-    <li *ngFor="let item of items" class="list-item">
+<ul class="list">
+  <li *ngFor="let item of items" class="list-item">
+    <div *ngIf="isMultiSelect" style="display: flex; flex-direction: row; align-items: center;">
+      <cyberfab-checkbox
+        [checked]="selectedItems.includes(item)"
+        (checkedChange)="toggleItem(item, $event)">
+      </cyberfab-checkbox>
+      <div style="width: 10px;"></div> <!-- TODO: Change the way the spacer is defined -->
       <ng-container *ngIf="itemTemplate; else defaultTemplate" [ngTemplateOutlet]="itemTemplate" [ngTemplateOutletContext]="{ $implicit: item }"></ng-container>
-      <ng-template #defaultTemplate>{{ item }}</ng-template>
-    </li>
-  </ul>
-
+    </div>
+    <div *ngIf="!isMultiSelect" (click)="selectItem(item)">
+      <ng-container *ngIf="itemTemplate; else defaultTemplate" [ngTemplateOutlet]="itemTemplate" [ngTemplateOutletContext]="{ $implicit: item }"></ng-container>
+    </div>
+    <ng-template #defaultTemplate>{{ item }}</ng-template>
+  </li>
+</ul>

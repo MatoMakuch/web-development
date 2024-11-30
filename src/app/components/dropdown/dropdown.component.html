@@ -15,20 +15,13 @@
     <i class="pi pi-chevron-down"></i>
   </span>
   <div class="dropdown-menu" *ngIf="isOpen" (click)="$event.stopPropagation()">
-    <cyberfab-list [items]="options">
-      <ng-template let-item>
-        <div *ngIf="isMultiSelect" style="display: flex; flex-direction: row; align-items: center;">
-          <cyberfab-checkbox
-            [checked]="selectedOptions.includes(item)"
-            (checkedChange)="toggleOption(item, $event)">
-          </cyberfab-checkbox>
-          <div style="width: 10px;"></div>
-          {{ item }}
-        </div>
-        <div *ngIf="!isMultiSelect" (click)="selectOption(item)">
-          {{ item }}
-        </div>
-      </ng-template>
+    <cyberfab-list
+      [items]="options"
+      [isMultiSelect]="isMultiSelect"
+      [selectedItems]="selectedOptions"
+      (selectedItemsChange)="selectedOptionsChange.emit($event)"
+      (itemSelected)="selectOption($event)">
+      <ng-template let-item>{{ item }}</ng-template>
     </cyberfab-list>
   </div>
 </div>
