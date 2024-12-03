@@ -1,18 +1,15 @@
-<app-tabs>
-  <app-tablist
-    [tabs]="['Header I', 'Header II', 'Header III']"
-    [activeTab]="activeTab"
-    (tabChange)="activeTab = $event"
-  ></app-tablist>
-
-  <app-tabpanel [active]="activeTab === 0">
-    <p class="m-0">Content for Tab 1</p>
-    <p>asdf</p>
-  </app-tabpanel>
-  <app-tabpanel [active]="activeTab === 1">
-    <p class="m-0">Content for Tab 2</p>
-  </app-tabpanel>
-  <app-tabpanel [active]="activeTab === 2">
-    <p class="m-0">Content for Tab 3</p>
-  </app-tabpanel>
-</app-tabs>
+<cyberfab-table
+  [columns]="[
+    { key: 'id', label: 'ID' },
+    { key: 'name', label: 'Name' },
+    { key: 'email', label: 'Email' }
+  ]"
+  [items]="[
+    { id: 1, name: 'John Doe', email: 'john.doe@example.com' },
+    { id: 2, name: 'Jane Smith', email: 'jane.smith@example.com' },
+    { id: 3, name: 'Sam Wilson', email: 'sam.wilson@example.com' }
+  ]"
+  [isMultiSelect]="false"
+  [(selectedItems)]="selectedItems"
+  (rowClicked)="onRowClicked($event)"
+></cyberfab-table>

@@ -7,6 +7,7 @@ import { CyberfabUploadDirective } from './components/upload/upload.directive';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { TabListComponent } from './components/tablist/tablist.component';
 import { TabPanelComponent } from './components/tabpanel/tabpanel.component';
+import { TableComponent } from './components/table/table.component';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ import { TabPanelComponent } from './components/tabpanel/tabpanel.component';
     CyberfabUploadDirective,
     TabsComponent,
     TabListComponent,
-    TabPanelComponent
+    TabPanelComponent,
+    TableComponent
 
   ],
   templateUrl: './app.component.html',
@@ -37,4 +39,7 @@ export class AppComponent {
   ];
   isChecked: boolean = false;
   activeTab: number = 0;
+  onRowClicked(row: any): void {
+    console.log('Row clicked:', row);}
+  selectedItems: any[] = [];
 }
