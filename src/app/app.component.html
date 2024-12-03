@@ -1,47 +1,18 @@
-<div class="container container-vertical">
+<app-tabs>
+  <app-tablist
+    [tabs]="['Header I', 'Header II', 'Header III']"
+    [activeTab]="activeTab"
+    (tabChange)="activeTab = $event"
+  ></app-tablist>
 
-  <label class="label label-medium">Name</label>
-
-  <input type="text" class="input">
-
-  <label class="label label-small">Enter your name</label>
-
-  <label class="label label-medium">City</label>
-
-  <cyberfab-dropdown 
-    [isMultiSelect]="false"
-    [options]="['Bratislava', 'Munich', 'Vienna']"
-    placeholder="Select a City">
-  </cyberfab-dropdown>
-
-  <label class="label label-small">Enter your city</label>
-
-  <div class="input-group">
-
-    <div class="input-group-start" style="display: flex; align-items: center; justify-content: center; padding-left: 0.5rem; padding-right: 0.5rem;">
-
-      <i class="icon pi pi-user" style="font-size: 0.75rem;"></i>
-
-    </div>
-
-    <input type="text" class="input input-group-middle" id="name-input" aria-describedby="name-input-icon name-input-validation">
-
-    <input type="text" class="input input-group-middle" id="name-input" aria-describedby="name-input-icon name-input-validation">
-
-    <input type="button" class="input-group-end button" value="Submit" id="name-submit-button">
-
-  </div>
-
-  <cyberfab-list [items]="products">
-    <ng-template let-item>
-      {{ item.name }}
-    </ng-template>
-  </cyberfab-list>
-
-  <input type="button" class="button" value="OK" id="name-submit-button">
-
-  <cyberfab-checkbox></cyberfab-checkbox>
-
-<router-outlet></router-outlet>
-
-<script type="module" src="../assets/scripts/dropdown.js"></script>
+  <app-tabpanel [active]="activeTab === 0">
+    <p class="m-0">Content for Tab 1</p>
+    <p>asdf</p>
+  </app-tabpanel>
+  <app-tabpanel [active]="activeTab === 1">
+    <p class="m-0">Content for Tab 2</p>
+  </app-tabpanel>
+  <app-tabpanel [active]="activeTab === 2">
+    <p class="m-0">Content for Tab 3</p>
+  </app-tabpanel>
+</app-tabs>

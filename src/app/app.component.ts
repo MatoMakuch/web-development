@@ -4,6 +4,9 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { ListComponent } from './components/list/list.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { CyberfabUploadDirective } from './components/upload/upload.directive';
+import { TabsComponent } from './components/tabs/tabs.component';
+import { TabListComponent } from './components/tablist/tablist.component';
+import { TabPanelComponent } from './components/tabpanel/tabpanel.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +16,11 @@ import { CyberfabUploadDirective } from './components/upload/upload.directive';
     DropdownComponent,
     ListComponent,
     CheckboxComponent,
-    CyberfabUploadDirective
+    CyberfabUploadDirective,
+    TabsComponent,
+    TabListComponent,
+    TabPanelComponent
+
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -29,4 +36,5 @@ export class AppComponent {
     { id: 6, name: 'Brown Purse' },
   ];
   isChecked: boolean = false;
+  activeTab: number = 0;
 }
