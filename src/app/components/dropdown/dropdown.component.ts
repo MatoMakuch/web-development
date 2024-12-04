@@ -1,32 +1,40 @@
 import { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';
+
+import { ListNode } from '../list/list.interface';
 import { CommonModule } from '@angular/common';
 import { ListComponent } from '../list/list.component';
-import { CheckboxComponent } from '../checkbox/checkbox.component';
 
 @Component({
   selector: 'cyberfab-dropdown',
   standalone: true,
-  imports: [CommonModule, ListComponent, CheckboxComponent],
+  imports: [CommonModule, ListComponent],
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss'],
 })
 export class DropdownComponent {
-  @Input() options: string[] = [];
+  @Input() options: ListNode[] = [];
   @Input() placeholder: string = 'Select an option';
   @Input() isMultiSelect: boolean = false;
-  @Input() selectedOptions: string[] = [];
-  @Output() selectedOptionsChange: EventEmitter<string[]> = new EventEmitter<string[]>();
+  @Input() selectedOptions: ListNode[] = [];
+  @Output() selectedOptionsChange = new EventEmitter<ListNode[]>();
 
   isOpen = false;
-  selectedOption: string | null = null;
 
   toggleDropdown() {
     this.isOpen = !this.isOpen;
   }
 
-  selectOption(option: string) {
+  handleSelectedItemsChange(items: ListNode[]) {
+    this.selectedOptions = items;
+    this.selectedOptionsChange.emit(this.selectedOptions);
+  }
+
+  handleSingleSelect(item: ListNode) {
+    this.selectOption(item);
+  }
+
+  selectOption(option: ListNode) {
     if (!this.isMultiSelect) {
-      this.selectedOption = option;
       this.selectedOptions = [option];
       this.selectedOptionsChange.emit(this.selectedOptions);
       this.isOpen = false;

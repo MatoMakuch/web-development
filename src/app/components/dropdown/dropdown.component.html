@@ -1,15 +1,15 @@
 <div class="dropdown" (click)="toggleDropdown()">
-  <span *ngIf="!isMultiSelect && !selectedOption" class="placeholder">
-    {{ placeholder }}
-  </span>
-  <span *ngIf="!isMultiSelect && selectedOption" class="selected">
-    {{ selectedOption }}
-  </span>
   <span *ngIf="isMultiSelect && selectedOptions.length === 0" class="placeholder">
     {{ placeholder }}
   </span>
   <span *ngIf="isMultiSelect && selectedOptions.length > 0" class="selected">
-    {{ selectedOptions.join(', ') }}
+    {{ "" }}
+  </span>
+  <span *ngIf="!isMultiSelect && selectedOptions.length === 0" class="placeholder">
+    {{ placeholder }}
+  </span>
+  <span *ngIf="!isMultiSelect && selectedOptions.length > 0" class="selected">
+    {{ selectedOptions[0] }}
   </span>
   <span class="dropdown-icon">
     <i class="pi pi-chevron-down"></i>
@@ -19,9 +19,11 @@
       [items]="options"
       [isMultiSelect]="isMultiSelect"
       [selectedItems]="selectedOptions"
-      (selectedItemsChange)="selectedOptionsChange.emit($event)"
-      (itemSelected)="selectOption($event)">
-      <ng-template let-item>{{ item }}</ng-template>
+      (selectedItemsChange)="handleSelectedItemsChange($event)"
+      (itemSelected)="handleSingleSelect($event)">
+      <ng-template let-item>
+        <span>{{ item.label }}</span>
+      </ng-template>
     </cyberfab-list>
   </div>
 </div>

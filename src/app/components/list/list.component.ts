@@ -1,6 +1,7 @@
 import { Component, ContentChild, Input, TemplateRef, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CheckboxComponent } from '../checkbox/checkbox.component';
+import { ListNode } from './list.interface';
 
 @Component({
   selector: 'cyberfab-list',
@@ -10,16 +11,26 @@ import { CheckboxComponent } from '../checkbox/checkbox.component';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent {
-  @Input() items: any[] = [];
+  @Input() items: ListNode[] = [];
   @Input() isMultiSelect: boolean = false;
-  @Input() selectedItems: any[] = [];
-  @Output() selectedItemsChange = new EventEmitter<any[]>();
-  @Output() itemSelected = new EventEmitter<any>();
+  @Input() selectedItems: ListNode[] = [];
+  @Output() selectedItemsChange = new EventEmitter<ListNode[]>();
+  @Output() itemSelected = new EventEmitter<ListNode>();
 
   @ContentChild(TemplateRef) itemTemplate!: TemplateRef<any>;
 
-  toggleItem(item: any, checked: boolean) {
-    if (checked) {
+  toggleItem(item: ListNode, selected: boolean) {
+    this.setItemState(item, selected);
+    this.updateParentState(this.items); // Check and update all parent nodes
+    this.selectedItemsChange.emit(this.selectedItems);
+  }
+
+  private setItemState(item: ListNode, selected: boolean) {
+    // Update the current item's state
+    item.selected = selected;
+
+    // Add or remove from selected items list
+    if (selected) {
       if (!this.selectedItems.includes(item)) {
         this.selectedItems.push(item);
       }
@@ -29,10 +40,39 @@ export class ListComponent {
         this.selectedItems.splice(index, 1);
       }
     }
-    this.selectedItemsChange.emit(this.selectedItems);
+
+    // Propagate state to children
+    if (item.children) {
+      item.children.forEach((child) => this.setItemState(child, selected));
+    }
   }
 
-  selectItem(item: any) {
-    this.itemSelected.emit(item);
+  private updateParentState(items: ListNode[]) {
+    // Traverse all nodes to update parent states based on child states
+    items.forEach((node) => {
+      if (node.children) {
+        const allChildrenSelected = node.children.every((child) => child.selected);
+
+        // Update parent's `selected` state based on children
+        node.selected = allChildrenSelected;
+      }
+    });
+  }
+
+  selectItem(item: ListNode) {
+    if (!this.isMultiSelect) {
+      this.itemSelected.emit(item);
+    }
+  }
+
+  toggleExpand(item: ListNode) {
+    if (item.children) {
+      item.expanded = !item.expanded;
+    }
+  }
+
+  onNestedListChange(updatedItems: ListNode[]) {
+    this.updateParentState(this.items); // Update parent state after nested changes
+    this.selectedItemsChange.emit(updatedItems);
   }
 }
