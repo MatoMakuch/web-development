@@ -41,6 +41,13 @@ export class DropdownComponent {
     }
   }
 
+  getSelectedOptionText(): string {
+    if (this.selectedOptions.length) {
+      return this.selectedOptions.map((option) => option.data).join(', ');
+    }
+    return this.placeholder;
+  }
+
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: Event) {
     if (!event.target || !(event.target as HTMLElement).closest('.dropdown')) {

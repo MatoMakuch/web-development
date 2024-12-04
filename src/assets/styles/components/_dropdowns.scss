@@ -36,7 +36,7 @@
 
   box-sizing: border-box;
   width: calc(#{unit-size-vw(3)}vw + 2 * #{$padding-medium}rem);
-  max-height: calc(#{unit-size-rem(6)}rem + 2 * #{$padding-medium}rem);
+  max-height: calc(#{unit-size-rem(12)}rem + 2 * #{$padding-medium}rem);
 
   background-color: $background-color;
 

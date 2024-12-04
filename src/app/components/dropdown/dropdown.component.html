@@ -3,7 +3,7 @@
     {{ placeholder }}
   </span>
   <span *ngIf="isMultiSelect && selectedOptions.length > 0" class="selected">
-    {{ "" }}
+    {{ getSelectedOptionText() }}
   </span>
   <span *ngIf="!isMultiSelect && selectedOptions.length === 0" class="placeholder">
     {{ placeholder }}
@@ -22,7 +22,7 @@
       (selectedItemsChange)="handleSelectedItemsChange($event)"
       (itemSelected)="handleSingleSelect($event)">
       <ng-template let-item>
-        <span>{{ item.label }}</span>
+        <span>{{ item.data }}</span>
       </ng-template>
     </cyberfab-list>
   </div>
