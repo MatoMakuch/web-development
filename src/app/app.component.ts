@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ListComponent } from './components/list/list.component';
-import { ListNode } from './components/list/list.interface';
+import { ListComponent } from '../core/list/list.component';
+import { ListNode } from '../core/list/list.interface';
 
 @Component({
   selector: 'app-root',
