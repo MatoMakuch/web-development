@@ -2,13 +2,21 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ListComponent } from '../core/list/list.component';
 import { ListNode } from '../core/list/list.interface';
+import { TabListComponent } from '../core/tablist/tablist.component';
+import { TabsComponent } from '../core/tabs/tabs.component';
+import { TabPanelComponent } from '../core/tabpanel/tabpanel.component';
+import { TableComponent } from '../core/table/table.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    ListComponent
+    ListComponent,
+    TabListComponent,
+    TabsComponent,
+    TabPanelComponent,
+    TableComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -19,11 +27,13 @@ export class AppComponent {
     {
       id: 1,
       data: 'Documents',
+      name: 'Documents',
       expanded: true,
       children: [
         {
           id: 2,
           data: 'Work',
+          name: 'Work',
           children: [
             { data: 'Expenses.doc' },
             { data: 'Resume.doc' },
@@ -32,6 +42,7 @@ export class AppComponent {
         {
           id: 3,
           data: 'Home',
+          name: 'Home',
           children: [
             { data: 'Invoices.txt' },
           ],
@@ -41,6 +52,7 @@ export class AppComponent {
     {
       id: 4,
       data: 'Pictures',
+      name: 'Pictures',
       children: [
         { data: 'barcelona.jpg' },
         { data: 'logo.png' },
@@ -50,4 +62,10 @@ export class AppComponent {
   ];
 
   selectedNodes: ListNode[] = [];
+  selectedItems: any[] = [];
+  isChecked: boolean = false;
+  activeTab: number = 0;
+  onRowClicked(row: any): void {
+  console.log('Row clicked:', row);
+  }
 }

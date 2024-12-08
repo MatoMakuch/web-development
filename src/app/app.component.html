@@ -1,9 +1,38 @@
 <div class="container container-vertical">
+  <app-tabs>
+    <app-tablist
+      [tabs]="['Tab 1', 'Tab 2']"
+      [activeTab]="activeTab"
+      (tabChange)="activeTab = $event"
+    ></app-tablist>
 
-  <cyberfab-list [items]="nodes" [isMultiSelect]="true" [(selectedItems)]="selectedNodes">
+    <app-tabpanel [active]="activeTab === 0">
+      <cyberfab-list
+        [items]="nodes"
+        [isMultiSelect]="true"
+        [(selectedItems)]="selectedNodes"
+      >
+      </cyberfab-list>
+    </app-tabpanel>
 
-  </cyberfab-list>  
+    <app-tabpanel [active]="activeTab === 1">
+      	
+	    <cyberfab-table
+        [columns]="[
+          { key: 'name', label: 'Name' },
+          { key: 'id', label: 'ID' }
+        ]"  
+        [items]="nodes"
+        [isMultiSelect]="false"
+        [(selectedItems)]="selectedItems"
+        (rowClicked)="onRowClicked($event)"
+      ></cyberfab-table>
+    </app-tabpanel>
+  </app-tabs>
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 
-<script type="module" src="../assets/scripts/dropdown.js"></script>
+  <script type="module" src="../assets/scripts/dropdown.js"></script>
+</div>
+
+
