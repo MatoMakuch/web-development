@@ -1,23 +1,23 @@
 <div class="container container-vertical">
-  <app-tabs>
-    <app-tablist
+  <maxterdev-tabs>
+    <maxterdev-tablist
       [tabs]="['Tab 1', 'Tab 2']"
       [activeTab]="activeTab"
       (tabChange)="activeTab = $event"
-    ></app-tablist>
+    ></maxterdev-tablist>
 
-    <app-tabpanel [active]="activeTab === 0">
-      <cyberfab-list
+    <maxterdev-tabpanel [active]="activeTab === 0">
+      <maxterdev-list
         [items]="nodes"
         [isMultiSelect]="true"
         [(selectedItems)]="selectedNodes"
       >
-      </cyberfab-list>
-    </app-tabpanel>
+      </maxterdev-list>
+    </maxterdev-tabpanel>
 
-    <app-tabpanel [active]="activeTab === 1">
+    <maxterdev-tabpanel [active]="activeTab === 1">
       	
-	    <cyberfab-table
+	    <maxterdev-table
         [columns]="[
           { key: 'label', label: 'Label' },
           { key: 'data', label: 'Data' }
@@ -26,9 +26,9 @@
         [isMultiSelect]="false"
         [(selectedItems)]="selectedItems"
         (rowClicked)="onRowClicked($event)"
-      ></cyberfab-table>
-    </app-tabpanel>
-  </app-tabs>
+      ></maxterdev-table>
+    </maxterdev-tabpanel>
+  </maxterdev-tabs>
 
   <router-outlet></router-outlet>
 

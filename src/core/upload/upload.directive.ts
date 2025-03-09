@@ -1,7 +1,7 @@
 import { Directive, HostListener, Input, Output, EventEmitter } from '@angular/core';
 
 @Directive({
-  selector: 'input[type="file"][cyberfab-upload]',
+  selector: 'input[type="file"][maxterdev-upload]',
   standalone: true,
 })
 export class CyberfabUploadDirective {

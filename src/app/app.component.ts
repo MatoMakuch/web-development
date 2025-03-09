@@ -22,7 +22,7 @@ import { TableComponent } from '../core/table/table.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'cyberfab-web-development';
+  title = 'maxterdev-web-development';
   nodes: ListNode[] = [
     {
       id: 1,
