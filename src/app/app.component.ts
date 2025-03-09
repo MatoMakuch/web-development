@@ -26,37 +26,51 @@ export class AppComponent {
   nodes: ListNode[] = [
     {
       id: 1,
-      data: 'Documents',
       name: 'Documents',
       expanded: true,
       children: [
         {
           id: 2,
-          data: 'Work',
           name: 'Work',
           children: [
-            { data: 'Expenses.doc' },
-            { data: 'Resume.doc' },
+            { 
+              name: 'Expenses.doc',
+              data: '...',
+            },
+            { 
+              name: 'Resume.doc',
+              data: '...',
+            },
           ],
         },
         {
           id: 3,
-          data: 'Home',
           name: 'Home',
           children: [
-            { data: 'Invoices.txt' },
+            { 
+              name: 'Invoices.txt',
+              data: '...',
+            },
           ],
         },
       ],
     },
     {
       id: 4,
-      data: 'Pictures',
       name: 'Pictures',
       children: [
-        { data: 'barcelona.jpg' },
-        { data: 'logo.png' },
-        { data: 'primeui.png' },
+        { 
+          name: 'barcelona.jpg',
+          data: '...',
+        },
+        { 
+          name: 'logo.png',
+          data: '...',
+        },
+        { 
+          name: 'primeui.png',
+          data: '...',
+        },
       ],
     },
   ];

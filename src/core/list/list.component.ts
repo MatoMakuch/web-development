@@ -17,7 +17,14 @@ export class ListComponent {
   @Output() selectedItemsChange = new EventEmitter<ListNode[]>();
   @Output() itemSelected = new EventEmitter<ListNode>();
 
-  @ContentChild(TemplateRef) itemTemplate!: TemplateRef<any>;
+  // Use ContentChild if no explicit template is provided, otherwise use the input.
+  @Input() inputItemTemplate?: TemplateRef<any>;
+  @ContentChild(TemplateRef) contentItemTemplate!: TemplateRef<any>;
+
+  // Helper to get the template (priority: input > projected)
+  protected get itemTemplate(): TemplateRef<any> {
+    return this.inputItemTemplate || this.contentItemTemplate;
+  }
 
   toggleItem(item: ListNode, selected: boolean) {
     this.setItemState(item, selected);

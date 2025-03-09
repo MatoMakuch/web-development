@@ -37,6 +37,7 @@
       [selectedItems]="selectedItems"
       (selectedItemsChange)="onNestedListChange($event)"
       (itemSelected)="itemSelected.emit($event)"
+      [inputItemTemplate]="itemTemplate"
       class="list-item-expansion">
     </cyberfab-list>
 
