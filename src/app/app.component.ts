@@ -26,29 +26,29 @@ export class AppComponent {
   nodes: ListNode[] = [
     {
       id: 1,
-      name: 'Documents',
+      label: 'Documents',
       expanded: true,
       children: [
         {
           id: 2,
-          name: 'Work',
+          label: 'Work',
           children: [
             { 
-              name: 'Expenses.doc',
+              label: 'Expenses.doc',
               data: '...',
             },
             { 
-              name: 'Resume.doc',
+              label: 'Resume.doc',
               data: '...',
             },
           ],
         },
         {
           id: 3,
-          name: 'Home',
+          label: 'Home',
           children: [
             { 
-              name: 'Invoices.txt',
+              label: 'Invoices.txt',
               data: '...',
             },
           ],
@@ -57,18 +57,18 @@ export class AppComponent {
     },
     {
       id: 4,
-      name: 'Pictures',
+      label: 'Pictures',
       children: [
         { 
-          name: 'barcelona.jpg',
+          label: 'barcelona.jpg',
           data: '...',
         },
         { 
-          name: 'logo.png',
+          label: 'logo.png',
           data: '...',
         },
         { 
-          name: 'primeui.png',
+          label: 'primeui.png',
           data: '...',
         },
       ],
